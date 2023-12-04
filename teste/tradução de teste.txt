@@ -1,0 +1,20 @@
+000 - 0000 - 0000 - 0000 - 0 
+ op    reg1  reg2   reg3   shamt
+
+meu registrador 0000 é um backup, salva o valor atual nele TBM se não houver proxima instrução
+
+2 loads inicias
+
+000 0000 0001 0010 0  hex 24 (load no r1 e r2 zerados pra salvar o valor no r3 0010)
+
+000 0000 0010 0011 0  hex 46 (load no r1 zerado e r2 com o valor anterior (6) pra salvar no r3 0011)
+
+010 0010 0011 0100 0  hex 4468 (add pra dar 2)
+
+001 0110 0100 0101 0  hex 2c8a (store desse valor)
+
+011 0101 0010 0111 0  hex 6a4e (subtração)
+
+100 0010 0011 1000 1  hex 8471 (beq que da um resultado negado, habilita o AND da ULA e da UC, soma os valores do PC e do Imediato, jogando pra posição 17)
+
+101 0000000110001     hex a031 (jump que dá erro da ULA mas realiza o salto pra posição 31 corretamente)
